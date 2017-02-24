@@ -25,6 +25,8 @@ coal_comb_df <- filter(SCC, str_detect(SCC$EI.Sector, "Coal"))
 
 coal_comb_vector <- coal_comb_df$SCC
 
+# Plot 4
+
 coal_emiss <- NEI %>% filter(SCC %in% coal_comb_vector) %>% group_by(year) %>% summarise(total = sum(Emissions))
 barplot(coal_emiss$total, names.arg = c("1999", "2002", "2005", "2008"), ylab = "Emissions PM2.5 (tons)", xlab = "Year", col = "blue", main = "USA Total Emissions (PM 2.5) Coal-Combustion Related Sources")
 
