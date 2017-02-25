@@ -21,7 +21,7 @@ Location <- str_replace_all(plot6$fips, c("06037" = "LA County", "24510" = "Balt
 
 plot6$year <- as.factor(plot6$year) # facilitates approriate x-axis labelling
 
-ggplot(plot6, aes(x = year, y = total)) + geom_bar(stat = "identity", position = "dodge", aes(fill = Location)) + labs(x = "Year", y = "Total Emissions (PM2.5) tons") + ggtitle("Emissions (PM2.5) Baltimore City & LA County") + theme(plot.title = element_text(hjust=0.5))
+ggplot(plot6, aes(x = year, y = total)) + geom_bar(stat = "identity", position = "dodge", aes(fill = Location)) + labs(x = "Year", y = "Total Emissions (PM2.5) tons") + ggtitle("On Road Emissions (PM2.5) Baltimore City & LA County") + theme(plot.title = element_text(hjust=0.5))
 
 png("Plot6.png")
 dev.set(2)

@@ -20,7 +20,7 @@ plot3 <- NEI %>% filter(fips == 24510) %>% group_by(year, type) %>% summarise(to
 
 plot3$year <- as.factor(plot3$year) # enables appropriate x-axis labelling.
 
-ggplot(plot3, aes(x = year, y = total)) + geom_bar(stat = "identity", fill = "blue") + facet_grid(.~type) + ggtitle("Baltimore Emissions (PM2.5)") + xlab("Year") + ylab("Total Emission (PM2.5) tons")
+ggplot(plot3, aes(x = year, y = total)) + geom_bar(stat = "identity", fill = "blue") + facet_grid(.~type) + ggtitle("Baltimore Emissions (PM2.5)") + labs(x = "Year", y = "Total Emissions (PM2.5) tons") + ggtitle("Emissions (PM2.5) Baltimore City per Type") + theme(plot.title = element_text(hjust=0.5))
 
 png("Plot3.png")
 dev.set(2)
